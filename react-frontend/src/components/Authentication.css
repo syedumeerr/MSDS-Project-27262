@@ -1,0 +1,153 @@
+/* src/components/Authentication.css */
+
+/* AUTH-CONTAINER */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    height: 100vh;
+    padding-top: 60px; /* Increased padding to accommodate fixed top bar */
+    background: linear-gradient(135deg, #d0eaff, #ffffff); /* Updated gradient for better contrast */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* TOP BAR */
+.auth-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push logos to the edges */
+    width: 100%;
+    padding: 0 20px; /* Add spacing on the sides */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    position: fixed; /* Fix the top bar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Define the height of the top bar */
+    background: linear-gradient(270deg, #1a8cff, #002952, #1a8cff);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure the top bar stays above other elements */
+}
+
+/* LOGO STYLING */
+.auth-header img {
+    height: 120px; /* Increased height for better visibility */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 250px; /* Increased max-width to accommodate larger logos */
+    object-fit: contain; /* Ensure the image scales without distortion */
+}
+
+/* TITLE STYLING */
+.auth-title {
+    flex: 1; /* Allow the title to take up available space */
+    text-align: center;
+    font-size: 20px; /* Reduced font size for a balanced look */
+    font-weight: bold;
+    color: #ffffff; /* White color for contrast against the blue background */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for emphasis */
+    margin: 0; /* Remove extra margin */
+}
+
+/* AUTH-FORM */
+.auth-form {
+    max-width: 380px;
+    margin: 40px auto; /* Adjusted margin to account for the fixed top bar */
+    padding: 30px 40px; /* Increased padding for better spacing */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in animation */
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* INPUT AND BUTTON STYLING */
+.auth-form input,
+.auth-form button {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.auth-form input {
+    border: 1px solid #d1d3e2;
+    font-size: 15px;
+    background: #f8f9fc;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.auth-form input:focus {
+    border-color: #4e73df;
+    outline: none;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.5); /* Highlight on focus */
+}
+
+.auth-form button {
+    background: linear-gradient(135deg, #4e73df, #6f42c1);
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.auth-form button:hover {
+    background: linear-gradient(135deg, #375ab6, #5a31a8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ERROR MESSAGE STYLING */
+.auth-form .error-message {
+    color: #e74a3b; /* Red color for errors */
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.auth-form .toggle-link a {
+    color: #4e73df;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.auth-form .toggle-link a:hover {
+    color: #375ab6;
+    text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+    .auth-header img {
+        height: 80px; /* Increased height for better visibility on small screens */
+        max-width: 180px; /* Adjusted max-width accordingly */
+    }
+
+    .auth-title {
+        font-size: 16px; /* Reduce title font size on small screens */
+    }
+
+    .auth-form {
+        padding: 20px 30px; /* Adjust padding for smaller screens */
+        max-width: 320px;
+    }
+}

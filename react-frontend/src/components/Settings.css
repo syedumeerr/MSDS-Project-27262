@@ -1,0 +1,90 @@
+.settings-container {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.settings-container h2 {
+  text-align: center;
+  color: #4e73df;
+  margin-bottom: 20px;
+}
+
+.settings-section {
+  margin-bottom: 20px;
+}
+
+.settings-section label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.settings-section input,
+.settings-section select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #4e73df, #375ab6);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.settings-section button:hover {
+  background: linear-gradient(135deg, #375ab6, #2b4d8a);
+  transform: scale(1.05);
+}
+
+.response {
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background-color: #4caf50;
+}
+
+.response.error {
+  background-color: #f44336;
+}
+
+.theme-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.save-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #4e73df, #375ab6);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.save-button:hover {
+  background: linear-gradient(135deg, #375ab6, #2b4d8a);
+  transform: scale(1.05);
+}

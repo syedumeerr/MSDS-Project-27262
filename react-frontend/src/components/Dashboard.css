@@ -1,0 +1,108 @@
+/* General dashboard styling */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 80px; /* Adjust for the height of the header */
+  }
+  
+  /* Stats container for the blocks */
+  .stats-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased spacing between blocks */
+    margin-bottom: 30px;
+  }
+  
+  /* Individual stat blocks */
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px; /* Increased width */
+    height: 180px; /* Increased height */
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .stat-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stat-block h3 {
+    margin: 0;
+    font-size: 20px; /* Slightly larger text */
+    font-weight: bold;
+  }
+  
+  .stat-block p {
+    font-size: 28px; /* Larger number text */
+    margin: 10px 0 0;
+    font-weight: bold;
+  }
+  
+  /* Modal for device list */
+  .device-modal {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    transform: translateX(-50%);
+    max-width: 300px;
+  }
+  
+  .device-modal h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .device-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .device-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .device-list li button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .device-list li button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stat-block {
+      width: 90%; /* Wider for smaller screens */
+      height: 150px; /* Slightly smaller height for responsiveness */
+    }
+  
+    .device-modal {
+      width: 90%;
+    }
+  }
+  

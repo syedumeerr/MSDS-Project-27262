@@ -1,0 +1,111 @@
+/* General Page Styling */
+.report-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .report-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #444;
+  }
+  
+  /* Filters Section */
+  .filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  
+  .filters input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .filters button {
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #4e73df, #6f42c1);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filters button:hover {
+    background: linear-gradient(135deg, #375ab6, #5a31a8);
+  }
+  
+  .filters button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Table Styling */
+  .report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+  
+  .report-table th,
+  .report-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .report-table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .report-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .report-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .report-table td {
+    word-wrap: break-word;
+    max-width: 200px;
+  }
+  
+  /* No Data Row */
+  .report-table .no-data {
+    font-size: 16px;
+    font-weight: bold;
+    color: #888;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .filters input,
+    .filters button {
+      width: 100%;
+    }
+  
+    .report-table th,
+    .report-table td {
+      font-size: 12px;
+      padding: 8px;
+    }
+  }
+  

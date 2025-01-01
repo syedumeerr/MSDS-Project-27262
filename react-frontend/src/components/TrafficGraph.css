@@ -1,0 +1,79 @@
+.traffic-graph-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.traffic-graph-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0056b3;
+}
+
+.back-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(135deg, #4e73df, #6f42c1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #375ab6, #5a31a8);
+}
+
+.traffic-error {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Table Styling (reuse Traffic.css) */
+
+.details-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0056b3;
+}
+
+.details-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: white; /* Consistent white for tables */
+  border-radius: 10px; /* Rounded edges */
+  overflow: hidden; /* Ensure corners are rounded */
+}
+
+.details-table th {
+  background-color: #4e73df; /* Match sidebar theme */
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.details-table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.details-table tr:nth-child(even) {
+  background-color: #f8f9fc; /* Light alternating rows */
+}
+
+.details-table tr:hover {
+  background-color: #e2e6ea; /* Subtle hover effect */
+}

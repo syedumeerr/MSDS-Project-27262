@@ -1,0 +1,217 @@
+/* src/components/DashboardLayout.css */
+
+/* Global Layout Styling */
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f5f5, #d6eaff);
+}
+
+/* HEADER BAR */
+.header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(90deg, #004080, #0073e6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header-logo i {
+  font-size: 28px;
+  margin-right: 12px;
+  color: #fff;
+}
+
+.header-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the username and the button */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.header-profile span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 60px; /* Below the header */
+  left: 0;
+  height: calc(100vh - 60px);
+  width: 60px;
+  background: transparent; /* No visible background when collapsed */
+  color: #fff;
+  transition: width 0.3s ease, background 0.3s ease;
+  z-index: 999;
+  overflow: visible; /* Changed from hidden to visible */
+  border-right: 2px solid transparent; /* Thin border hint for sidebar */
+}
+
+.sidebar:hover {
+  border-right: 2px solid #0073e6; /* Highlight when hovered */
+}
+
+.sidebar.expanded {
+  width: 250px;
+  background: linear-gradient(180deg, #004080, #002244);
+  border-right: none; /* Remove border when expanded */
+}
+
+/* Sidebar Indicator */
+.sidebar-indicator {
+  position: absolute;
+  top: 50%;
+  right: -10px; /* Position outside the collapsed sidebar */
+  transform: translateY(-50%) rotate(0deg);
+  width: 8px;
+  height: 50px;
+  background: linear-gradient(90deg, #0073e6, #0056b3);
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, right 0.3s ease, width 0.3s ease, rotate 0.3s ease;
+  z-index: 1001; /* Ensure it's above the sidebar */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar:hover .sidebar-indicator {
+  transform: translateY(-50%) translateX(5px) rotate(5deg); /* Slide out and rotate slightly on hover */
+}
+
+.sidebar.expanded .sidebar-indicator {
+  display: none; /* Hide the indicator when the sidebar is expanded */
+}
+
+/* Sidebar Menu Heading */
+.sidebar-title {
+  font-size: 20px;
+  margin: 20px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 2px solid #0073e6;
+  padding-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.expanded .sidebar-title {
+  opacity: 1;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  margin: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  color: #fff;
+}
+
+.sidebar-menu li:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Hide the span (label) when sidebar is collapsed */
+.sidebar-menu li span {
+  margin-left: 12px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.expanded .sidebar-menu li span {
+  opacity: 1;
+}
+
+/* Hide the icons when sidebar is collapsed */
+.sidebar:not(.expanded) .sidebar-menu li i {
+  display: none;
+}
+
+/* Center the menu items when icons are hidden */
+.sidebar:not(.expanded) .sidebar-menu li {
+  justify-content: center;
+}
+
+.sidebar-menu li i {
+  font-size: 22px;
+  width: 40px;
+  text-align: center;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-top: 60px; /* Below the header */
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.expanded ~ .main-content {
+  margin-left: 250px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    height: calc(100% - 60px);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.expanded {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Logout Button Styling */
+.header-profile .MuiButton-contained {
+  background-color: #ff4d4d; /* Red color */
+  color: #fff;
+  font-weight: bold;
+  text-transform: none; /* Keep text as is */
+}
+
+.header-profile .MuiButton-contained:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
